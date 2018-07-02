@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/seaman.iml" filepath="$PROJECT_DIR$/.idea/seaman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seaman.iml" filepath="$PROJECT_DIR$/seaman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seaman-common/seaman-common.iml" filepath="$PROJECT_DIR$/seaman-common/seaman-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seaman-upm/seaman-upm.iml" filepath="$PROJECT_DIR$/seaman-upm/seaman-upm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/seaman-web/seaman-web.iml" filepath="$PROJECT_DIR$/seaman-web/seaman-web.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="seaman-web:war">
+    <output-path>$PROJECT_DIR$/seaman-web/target</output-path>
+    <root id="archive" name="seaman-web.war">
+      <element id="artifact" artifact-name="seaman-web:war exploded" />
+    </root>
+  </artifact>
+</component>

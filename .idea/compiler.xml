@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="seaman-common" />
+        <module name="seaman-upm" />
+        <module name="seaman-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="seaman" target="1.5" />
+      <module name="seaman-common" target="1.8" />
+      <module name="seaman-upm" target="1.8" />
+      <module name="seaman-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
