@@ -1,14 +1,13 @@
 package com.tao.seaman.common.util;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
- * 资源文件读取工具类
- *
- * @author taojie6 2018/7/2 20:03
+ * @author taojie6 2018/7/3 19:23
  * @version V1.0
  * @modificationHistory=========================逻辑或功能性重大变更记录
- * @modify by user: {修改人} 2018年07月02日
+ * @modify by user: {修改人} 2018年07月03日
  * @modify by reason:{方法名}:{原因}
  */
 public class PropertiesFileUtil {
@@ -26,7 +25,7 @@ public class PropertiesFileUtil {
     /**
      * 资源文件
      */
-    private ResourceBundle resourceBundle = null;
+    private Properties properties = null;
 
     /**
      * 默认资源文件的名称
@@ -45,7 +44,12 @@ public class PropertiesFileUtil {
 
     private PropertiesFileUtil(String name) {
         this.loadTime = new Date();
-        this.resourceBundle = ResourceBundle.getBundle(name);
+        this.properties = new Properties();
+        try {
+            this.properties.load(this.getClass().getResourceAsStream(name));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -76,8 +80,7 @@ public class PropertiesFileUtil {
      */
     public String getString(String key) {
         try {
-            String value = resourceBundle.getString(key);
-            return value;
+            return properties.getProperty(key).trim();
         } catch (MissingResourceException e) {
             return "";
         }
@@ -91,7 +94,7 @@ public class PropertiesFileUtil {
      */
     public Integer getInteger(String key) {
         try {
-            String value = resourceBundle.getString(key);
+            String value = properties.getProperty(key).trim();
             return Integer.valueOf(value);
         } catch (MissingResourceException e) {
             return null;
@@ -105,7 +108,7 @@ public class PropertiesFileUtil {
      */
     public Boolean getBoolean(String key) {
         try {
-            String value = resourceBundle.getString(key);
+            String value = properties.getProperty(key).trim();
             if (StringUtil.TRUE.equalsIgnoreCase(value.trim())) {
                 return true;
             }
@@ -124,13 +127,3 @@ public class PropertiesFileUtil {
         return loadTime;
     }
 }
-
-
-
-
-
-
-
-
-
-
